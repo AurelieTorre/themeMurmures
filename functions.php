@@ -765,7 +765,82 @@ add_action( 'acf/include_fields', function() {
 
 // ######### CPT #########
 
-function cptui_register_my_taxes_genre() {
+function cptui_register_my_cpts() {
+
+	/**
+	 * Post Type: Livres.
+	 */
+
+	$labels = [
+		"name" => esc_html__( "Livres", "custom-post-type-ui" ),
+		"singular_name" => esc_html__( "Livre", "custom-post-type-ui" ),
+		"menu_name" => esc_html__( "Les Livres", "custom-post-type-ui" ),
+		"all_items" => esc_html__( "Tous les Livres", "custom-post-type-ui" ),
+		"add_new" => esc_html__( "Ajouter", "custom-post-type-ui" ),
+		"add_new_item" => esc_html__( "Ajouter un nouveau Livre", "custom-post-type-ui" ),
+		"edit_item" => esc_html__( "Editer le Livre", "custom-post-type-ui" ),
+		"new_item" => esc_html__( "Nouveau Livre", "custom-post-type-ui" ),
+		"view_item" => esc_html__( "Voir le Livre", "custom-post-type-ui" ),
+		"view_items" => esc_html__( "Voir les Livres", "custom-post-type-ui" ),
+		"search_items" => esc_html__( "Chercher des Livres", "custom-post-type-ui" ),
+		"not_found" => esc_html__( "Livre introuvable", "custom-post-type-ui" ),
+		"not_found_in_trash" => esc_html__( "Aucun livre ne gît dans la corbeille", "custom-post-type-ui" ),
+		"parent" => esc_html__( "Livre Parent:", "custom-post-type-ui" ),
+		"featured_image" => esc_html__( "Image principale pour ce Livre", "custom-post-type-ui" ),
+		"set_featured_image" => esc_html__( "Choisir l'image principale pour ce Livre", "custom-post-type-ui" ),
+		"remove_featured_image" => esc_html__( "Retirer l'image principale pour ce Livre", "custom-post-type-ui" ),
+		"use_featured_image" => esc_html__( "Utiliser comme image principale pour ce Livre", "custom-post-type-ui" ),
+		"archives" => esc_html__( "archives des Livres", "custom-post-type-ui" ),
+		"insert_into_item" => esc_html__( "Insérer dans le Livre", "custom-post-type-ui" ),
+		"uploaded_to_this_item" => esc_html__( "Téléchargé pour ce Livre", "custom-post-type-ui" ),
+		"filter_items_list" => esc_html__( "Filtrer la liste des Livres", "custom-post-type-ui" ),
+		"items_list_navigation" => esc_html__( "Naviguer dans la liste des Livres", "custom-post-type-ui" ),
+		"items_list" => esc_html__( "Liste des Livres", "custom-post-type-ui" ),
+		"attributes" => esc_html__( "Attributs des Livres", "custom-post-type-ui" ),
+		"name_admin_bar" => esc_html__( "Livre", "custom-post-type-ui" ),
+		"item_published" => esc_html__( "Livre publié", "custom-post-type-ui" ),
+		"item_published_privately" => esc_html__( "Livre publié en privé", "custom-post-type-ui" ),
+		"item_reverted_to_draft" => esc_html__( "Livre retourné en brouillon", "custom-post-type-ui" ),
+		"item_trashed" => esc_html__( "Livre mis à la corbeille", "custom-post-type-ui" ),
+		"item_scheduled" => esc_html__( "Livre programmé", "custom-post-type-ui" ),
+		"item_updated" => esc_html__( "Livre mis à jour.", "custom-post-type-ui" ),
+		"parent_item_colon" => esc_html__( "Livre Parent:", "custom-post-type-ui" ),
+	];
+
+	$args = [
+		"label" => esc_html__( "Livres", "custom-post-type-ui" ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => true,
+		"rest_base" => "",
+		"rest_controller_class" => "WP_REST_Posts_Controller",
+		"rest_namespace" => "wp/v2",
+		"has_archive" => false,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"delete_with_user" => false,
+		"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"can_export" => false,
+		"rewrite" => [ "slug" => "livre", "with_front" => true ],
+		"query_var" => true,
+		"menu_icon" => "dashicons-book-alt",
+		"supports" => [ "title" ],
+		"show_in_graphql" => false,
+	];
+
+	register_post_type( "livre", $args );
+}
+
+add_action( 'init', 'cptui_register_my_cpts' );
+
+
+function cptui_register_my_taxes() {
 
 	/**
 	 * Taxonomy: Genres.
@@ -823,4 +898,5 @@ function cptui_register_my_taxes_genre() {
 	];
 	register_taxonomy( "genre", [ "livre" ], $args );
 }
-add_action( 'init', 'cptui_register_my_taxes_genre' );
+add_action( 'init', 'cptui_register_my_taxes' );
+?>
