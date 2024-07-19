@@ -1,0 +1,13 @@
+# node_modules
+node_modules/
+
+# log files
+*.log
+
+# temporary files
+*.tmp
+*.temp
+
+# other files to ignore
+*.DS_Store
+Thumbs.db

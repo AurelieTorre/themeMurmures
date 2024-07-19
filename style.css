@@ -1,0 +1,236 @@
+@charset "UTF-8";
+@font-face {
+  font-family: Cardinal;
+  src: url(assets/fonts/cardinal.ttf);
+}
+@font-face {
+  font-family: Cardinal;
+  src: url(assets/fonts/cardinal.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #5F0F40;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+a {
+  color: #fbb724;
+}
+a:hover {
+  color: #0F4C5C;
+}
+a:visited {
+  color: #FB8B24;
+}
+
+.content {
+  padding: 5vw;
+  min-height: 45vh;
+}
+.content__p {
+  color: #fbb724;
+  font-size: 1.3rem;
+}
+.content > p {
+  color: #fbb724;
+  font-size: 1.3rem;
+}
+
+@font-face {
+  font-family: Cardinal;
+  src: url(assets/fonts/cardinal.ttf);
+}
+footer {
+  display: flex;
+  justify-content: space-between;
+  color: #FB8B24;
+  padding: 2vw;
+  font-size: 1rem;
+  text-align: right;
+  background: #0F4C5C;
+  margin-top: 3vh;
+}
+
+@font-face {
+  font-family: Cardinal;
+  src: url(assets/fonts/cardinal.ttf);
+}
+.header {
+  height: 35vh;
+  padding-left: 3vw;
+}
+.header__h1 {
+  font-family: Cardinal, Georgia, "Times New Roman", Times, serif;
+  font-size: 3rem;
+  color: #fbb724;
+  padding: 2vw;
+}
+.header__p {
+  display: inline-block;
+  background-color: rgba(95, 15, 64, 0.4392156863);
+  border-radius: 8px;
+  color: burlywood;
+  margin: 0 2vw;
+  padding: 0.3rem;
+  font-size: 1.3rem;
+}
+
+@font-face {
+  font-family: Cardinal;
+  src: url(assets/fonts/cardinal.ttf);
+}
+.container {
+  display: flex;
+  flex-direction: column;
+}
+.container__h2 {
+  padding: 2vw 3vw;
+  color: #fbb724;
+  font-family: Cardinal;
+  font-size: 2rem;
+}
+.container__publications {
+  display: flex;
+  justify-content: space-around;
+}
+.container__publications_a {
+  text-decoration: none;
+}
+.container__publications_a_book {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 17.5vw;
+  margin: 1vw;
+  background: #0F4C5C;
+  border-radius: 8px;
+  transition: 0.3s;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+.container__publications_a_book:hover {
+  transform: scale(1.05);
+}
+.container__publications_a_book_title {
+  color: burlywood;
+  font-size: 1rem;
+  padding: 0.75rem 0.5rem 0.5rem;
+}
+.container__publications_a_book_author {
+  color: #FB8B24;
+}
+.container__publications_a_book_cover {
+  height: 16vw;
+  width: 10vw;
+  margin: 0.75rem;
+}
+.container__articles {
+  padding-left: 6vw;
+  margin-bottom: 6vh;
+}
+.container__articles_item {
+  background-color: #9A031E;
+  border-radius: 8px;
+  padding: 1vw;
+  width: 17.5vw;
+  margin-top: 1vh;
+}
+.container__articles_item_a {
+  color: #fbb724;
+}
+.container__articles_item_a:hover {
+  color: #0F4C5C;
+}
+
+@font-face {
+  font-family: Cardinal;
+  src: url(assets/fonts/cardinal.ttf);
+}
+.book {
+  color: burlywood;
+  font-size: 1.3rem;
+  padding: 2vw 2vw 0;
+  min-height: 45vh;
+  display: flex;
+}
+.book__left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.book__left_p {
+  margin: 0 auto 1vh;
+  color: #fbb724;
+}
+.book__left_cover {
+  width: 12vw;
+  height: 42.5vh;
+  margin: 1vh auto;
+}
+.book__right {
+  flex: 2.5;
+  padding-top: 1.75rem;
+}
+.book__right_p {
+  padding: 0.5rem 0;
+}
+
+.dispo-a-paraitre::before {
+  padding-right: 1vw;
+  content: "•";
+  font-size: 2.15rem;
+  color: deepskyblue;
+}
+
+.dispo-disponible::before {
+  padding-right: 1vw;
+  content: "•";
+  font-size: 2.15rem;
+  color: limegreen;
+}
+
+.dispo-reimpression-en-cours::before {
+  padding-right: 1vw;
+  content: "•";
+  font-size: 2.15rem;
+  color: yellow;
+}
+
+.dispo-epuise::before {
+  padding-right: 1vw;
+  content: "•";
+  font-size: 2.15rem;
+  color: rgb(255, 18, 18);
+}
+
+@font-face {
+  font-family: Cardinal;
+  src: url(assets/fonts/cardinal.ttf);
+}
+.genre {
+  padding: 1vw;
+  margin: 1vW;
+  background: #9A031E;
+  border-radius: 1vw;
+}
+.genre__a {
+  color: burlywood;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.genre__a:hover {
+  color: #0F4C5C;
+}
+.genre__a_cover {
+  height: 9vw;
+  width: 5vw;
+}
+
+/*# sourceMappingURL=style.css.map */
