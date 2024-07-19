@@ -6,6 +6,8 @@
 		<meta charset="utf-8">
 
 		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+		
+		<link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/assets/img/Fairy-Relaxing-On-The-Crescent-Moon.png">
 
 		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/minireset.min.css">
 		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css">
