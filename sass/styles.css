@@ -64,15 +64,7 @@ footer {
   height: 35vh;
   padding-left: 3vw;
 }
-.header_menu > ul {
-  list-style: none;
-  display: flex;
-  justify-content: space-around;
-  padding: 1vh 0;
-  margin-left: -4vw;
-  background-color: rgba(95, 15, 64, 0.4392156863);
-}
-.header_menu > ul {
+.header_menu {
   display: flex;
 }
 .header__h1 {
@@ -242,6 +234,4 @@ footer {
 .genre__a_cover {
   height: 9vw;
   width: 5vw;
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=styles.css.map */

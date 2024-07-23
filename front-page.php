@@ -2,10 +2,19 @@
 <?php get_header() ?>
 
 <header class="header" style="background-image:url('<?php the_field('home__header_wallpaper'); ?>'); background-position: center; ">
+	<?php
+		wp_nav_menu(array(
+			'menu' => 'main-menu', // Name of the menu
+			'container' => 'nav',
+			'container_class' => 'header_menu',
+			'menu_class' => 'listemenu'
+		));
+	?>	
+	
 	<h1 class="header__h1"><?php the_field('home__header_title'); ?></h1>
 
 	<?php if (get_field('home__header_subtitle')) : ?>
-			<p class="header__p"><?php the_field('home__header_subtitle'); ?></p>
+		<p class="header__p"><?php the_field('home__header_subtitle'); ?></p>
 	<?php endif; ?>
 </header>
 
