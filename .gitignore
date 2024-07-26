@@ -11,3 +11,7 @@ node_modules/
 # other files to ignore
 *.DS_Store
 Thumbs.db
+
+# ignore SASS files
+*.sass
+*.scss
