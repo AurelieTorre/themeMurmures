@@ -400,6 +400,53 @@ add_action( 'acf/include_fields', function() {
 ) );
 
 	acf_add_local_field_group( array(
+	'key' => 'group_669fa75ed1c1e',
+	'title' => 'Blog',
+	'fields' => array(
+		array(
+			'key' => 'field_669fa75f1bd4e',
+			'label' => 'Titre de la page de blog',
+			'name' => 'blog__title',
+			'aria-label' => '',
+			'type' => 'text',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => 'Nos derniers articles',
+			'maxlength' => '',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+		),
+	),
+	'location' => array(
+		array(
+			array(
+				'param' => 'page',
+				'operator' => '==',
+				'value' => '103',
+			),
+		),
+	),
+	'menu_order' => 0,
+	'position' => 'normal',
+	'style' => 'default',
+	'label_placement' => 'top',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => array(
+		0 => 'the_content',
+	),
+	'active' => true,
+	'description' => '',
+	'show_in_rest' => 0,
+) );
+
+	acf_add_local_field_group( array(
 	'key' => 'group_668fe5daab065',
 	'title' => 'Liste des livres',
 	'fields' => array(
@@ -576,7 +623,9 @@ add_action( 'acf/include_fields', function() {
 	'style' => 'default',
 	'label_placement' => 'top',
 	'instruction_placement' => 'label',
-	'hide_on_screen' => '',
+	'hide_on_screen' => array(
+		0 => 'the_content',
+	),
 	'active' => true,
 	'description' => '',
 	'show_in_rest' => 0,
@@ -840,6 +889,7 @@ function cptui_register_my_cpts() {
 add_action( 'init', 'cptui_register_my_cpts' );
 
 
+
 function cptui_register_my_taxes() {
 
 	/**
@@ -899,4 +949,5 @@ function cptui_register_my_taxes() {
 	register_taxonomy( "genre", [ "livre" ], $args );
 }
 add_action( 'init', 'cptui_register_my_taxes' );
+
 ?>

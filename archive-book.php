@@ -19,10 +19,33 @@ $image_url = get_field('home__header_wallpaper', $home_id); // Récupérer l'ima
   <h1 class="header__h1"><?php the_title(); ?></h1>
 </header>
 
-<div class="content">
-	<p class="content__p"><?php the_field('books__description'); ?></p>
-	<p class="content__p"><?php the_field('books__cards'); ?></p>
-	<p class="content__p"><?php the_field('books__genres'); ?></p>
-</div>
+<?php
+	$args = array(
+		'post_type' => 'livre',
+		'posts_per_page' => -1 // Retrieve all livres
+	);
+?>	
+
+<?php	$livres = new WP_Query($args); ?>
+
+<?php	if ($livres->have_posts())  : ?>
+	<?php	while ($livres->have_posts()) : $livres->the_post(); ?>
+
+		<div class="content">
+			<a class="content__a" href="<?php the_permalink(); ?>">
+				<h2 class="content__h2"><?php get_field('book__title'); ?></h2>
+				<p class="content__p"><?php get_field('book__author'); ?></p>
+				<p class="content__p"><?php get_field('book__author'); ?></p>
+				<div class="content__img" style="background-image:url('<?php the_field('book__cover'); ?>'); background-repeat: no-repeat; background-size: contain;"></div>
+			</a>
+		</div>
+
+	<?php endwhile; ?>
+<?php else : ?>
+	<p class="content__p">Aucun livre n'est encore sorti... Restez à l'affût !</p>
+<?php endif; ?>
+
+<?php wp_reset_query(); ?>
+<?php wp_reset_postdata(); ?> 
 
 <?php get_footer(); ?>

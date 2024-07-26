@@ -19,10 +19,37 @@ $image_url = get_field('home__header_wallpaper', $home_id); // Récupérer l'ima
   <h1 class="header__h1"><?php the_title(); ?></h1>
 </header>
 
-<div class="content">
-	<p class="content__p"><?php the_field('posts__description'); ?></p>
-	<p class="content__p"><?php the_field('posts__cards'); ?></p>
-	<p class="content__p"><?php the_field('posts__categories'); ?></p>
-</div>
+<div class="blog">
+		<h2 class="blog__h2"><?php the_field('blog__title'); ?></h2>
+
+		<div class="blog__articles">
+
+			<?php
+				$args = array(
+					'post_type' => 'post',
+					'posts_per_page' => -1,
+					'orderby' => 'date',
+					'order' => 'DESC',
+				);
+			?>
+
+			<?php $the_query = new WP_Query($args); ?>
+
+			<?php if ($the_query->have_posts()) : ?>
+				<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+		
+					<div class="blog__articles_item">
+						<a class="blog__articles_item_a" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+            <div class="blog__articles_item_p"><?php the_content(); ?></div>
+          </div>
+
+				<?php endwhile; ?>
+			<?php endif; ?>
+
+			<?php wp_reset_query(); ?>
+			<?php wp_reset_postdata(); ?>    
+		</div>
+
+	</div>
 
 <?php get_footer(); ?>

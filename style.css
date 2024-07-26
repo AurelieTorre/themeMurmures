@@ -244,4 +244,37 @@ footer {
   width: 5vw;
 }
 
+@font-face {
+  font-family: Cardinal;
+  src: url(assets/fonts/cardinal.ttf);
+}
+.blog {
+  color: burlywood;
+  padding: 2vw;
+}
+.blog__h2 {
+  color: #fbb724;
+  margin: 1vh 0;
+}
+.blog__articles {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2vw;
+}
+.blog__articles_item {
+  margin: 1vh 0;
+  background: #0F4C5C;
+  border-radius: 8px;
+  padding: 2vw;
+}
+.blog__articles_item_a {
+  font-size: 1.75rem;
+}
+.blog__articles_item_p {
+  margin-top: 1rem;
+}
+.blog__articles_item_p > ul {
+  padding-left: 3vw;
+}
+
 /*# sourceMappingURL=style.css.map */
