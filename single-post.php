@@ -8,6 +8,14 @@
 	?>
 
 	<header class="header" style="background-image:url('<?php echo $image_url; ?>'); background-position: center; ">
+		<?php
+			wp_nav_menu(array(
+				'menu' => 'main-menu', // Name of the menu
+				'container' => 'nav',
+				'container_class' => 'header_menu',
+				'menu_class' => 'listemenu'
+			));
+		?>
 		<h1 class="header__h1"><?php the_title(); ?></h1>
 	</header>
 
